@@ -57,8 +57,6 @@ export function Signup() {
         value={form.name}
         onChange={handleChange}
       />
-      <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} />
 
       <label htmlFor="formEmail">E-mail:</label>
       <input
