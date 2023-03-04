@@ -5,6 +5,7 @@ import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
+import { ItensMenu } from "./pages/ItensMenu";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
@@ -14,6 +15,7 @@ function App() {
       <AuthContextComponent>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/itensmenu" element={<ItensMenu />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route
