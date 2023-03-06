@@ -24,7 +24,7 @@ export function EditFood() {
       }
     }
     fetchDish();
-  }, []);
+  }, [params.id]);
 
   const navigate = useNavigate();
   function handleChange(e) {

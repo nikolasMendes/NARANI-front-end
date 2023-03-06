@@ -18,7 +18,7 @@ export function FoodDetails() {
       }
     }
     fetchFood();
-  }, []);
+  }, [params.id]);
 
   return (
     <div>
