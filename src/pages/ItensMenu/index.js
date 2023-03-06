@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { api } from "../../api/api";
-import { Link, useParams } from "react-router-dom";
+import { AuthContext } from "../../contexts/authContext";
+
+import { Link } from "react-router-dom";
 export function ItensMenu() {
+  const { loggedInUser } = useContext(AuthContext);
   const [menu, setMenu] = useState([]);
-  console.log(menu, "teste");
-  const params = useParams();
+
   useEffect(() => {
     async function fetchMenu() {
       try {
@@ -30,16 +32,15 @@ export function ItensMenu() {
               <p>Serve: {currentMenu.serve}</p>
               <p>Tempo de preparo: {currentMenu.preparo}</p>
               <p>Calorias: {currentMenu.calorias}</p>
-              <p></p>
-
               <Link to={`/details/${currentMenu._id}`}>
                 <button>Details</button>
               </Link>
             </div>
           );
         })}
-
-        <button>Gerenciar</button>
+        {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
+          <button>Gerenciar</button>
+        ) : null}
       </>
     </>
   );
