@@ -2,10 +2,10 @@ import { useState, useEffect, useContext } from "react";
 import { api } from "../../api/api";
 import { AuthContext } from "../../contexts/authContext";
 
+import { Link } from "react-router-dom";
 export function ItensMenu() {
   const { loggedInUser } = useContext(AuthContext);
   const [menu, setMenu] = useState([]);
-  console.log(menu, "teste");
 
   useEffect(() => {
     async function fetchMenu() {
@@ -32,7 +32,9 @@ export function ItensMenu() {
               <p>Serve: {currentMenu.serve}</p>
               <p>Tempo de preparo: {currentMenu.preparo}</p>
               <p>Calorias: {currentMenu.calorias}</p>
-              <button>veja em detalhes</button>
+              <Link to={`/details/${currentMenu._id}`}>
+                <button>Details</button>
+              </Link>
             </div>
           );
         })}

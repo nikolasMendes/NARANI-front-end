@@ -14,7 +14,7 @@ export function ProtectedRoute(props) {
     if (parsedUser.token) {
       navigate("/login");
     }
-  }, []);
+  }, [navigate, parsedUser]);
 
   return <Component />;
 }

@@ -8,6 +8,8 @@ import { ErrorPage } from "./pages/ErrorPage";
 import { ItensMenu } from "./pages/ItensMenu";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { EditFood } from "./pages/EditFood";
+import { FoodDetails } from "./pages/FoodDetails";
 
 function App() {
   return (
@@ -22,7 +24,8 @@ function App() {
             path="/profile"
             element={<ProtectedRoute component={Profile} />}
           />
-
+          <Route path="/edit/:id" element={<EditFood />} />
+          <Route path="/details/:id" element={<FoodDetails />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>
