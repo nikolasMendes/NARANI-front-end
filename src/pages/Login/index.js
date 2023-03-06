@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function Login() {
   const [form, setForm] = useState({
@@ -22,11 +23,12 @@ export function Login() {
 
     try {
       const response = await api.post("/user/login", form);
+      console.log(response, "teste___");
       setLoggedInUser({ ...response.data });
 
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
 
-      navigate("/profile");
+      navigate("/itensMenu");
     } catch (error) {
       console.log(error);
     }
@@ -51,7 +53,11 @@ export function Login() {
           value={form.password}
           onChange={handleChange}
         />
+
         <button type="submit">Entrar!</button>
+
+        <p>Ainda não tem cadastro?</p>
+        <Link to="/signup">Clique aqui para se cadastrar!</Link>
       </form>
     </>
   );

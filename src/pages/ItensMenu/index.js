@@ -42,7 +42,9 @@ export function ItensMenu() {
           );
         })}
         {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
-          <button>Gerenciar</button>
+          <Link to="/edit/:id">
+            <button>Gerenciar</button>
+          </Link>
         ) : null}
       </>
     </>
