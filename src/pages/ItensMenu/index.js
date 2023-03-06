@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 export function ItensMenu() {
   const [menu, setMenu] = useState([]);
   console.log(menu, "teste");
-  const params = useParams();
+
   useEffect(() => {
     async function fetchMenu() {
       try {
