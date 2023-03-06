@@ -9,6 +9,7 @@ export function ItensMenu() {
     async function fetchMenu() {
       try {
         const response = await api.get("/menu");
+        console.log(response);
         setMenu([...response.data]);
       } catch (err) {
         console.log(err);
