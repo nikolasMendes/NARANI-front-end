@@ -7,6 +7,9 @@ export function ItensMenu() {
   const { loggedInUser } = useContext(AuthContext);
   const [menu, setMenu] = useState([]);
 
+  console.log(menu, "teste");
+
+
   useEffect(() => {
     async function fetchMenu() {
       try {
