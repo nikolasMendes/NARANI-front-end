@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { api } from "../../api/api";
-
+import { Link, useParams } from "react-router-dom";
 export function ItensMenu() {
   const [menu, setMenu] = useState([]);
   console.log(menu, "teste");
-
+  const params = useParams();
   useEffect(() => {
     async function fetchMenu() {
       try {
@@ -31,6 +31,10 @@ export function ItensMenu() {
               <p>Tempo de preparo: {currentMenu.preparo}</p>
               <p>Calorias: {currentMenu.calorias}</p>
               <p></p>
+
+              <Link to={`/details/${currentMenu._id}`}>
+                <button>Details</button>
+              </Link>
             </div>
           );
         })}
