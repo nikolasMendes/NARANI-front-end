@@ -29,7 +29,7 @@ function YourOrder(props) {
 
   async function handleDelete() {
     try {
-      const response = await api.delete(`/order/${params.id}`);
+      const response = await api.delete(`/order/${params.orderId}`);
       console.log(response);
       navigate("/order");
     } catch (err) {

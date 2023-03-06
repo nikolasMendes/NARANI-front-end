@@ -9,7 +9,6 @@ export function ItensMenu() {
 
   console.log(menu, "teste");
 
-
   useEffect(() => {
     async function fetchMenu() {
       try {
@@ -26,6 +25,11 @@ export function ItensMenu() {
     <>
       <h2>Culinária Japonesa</h2>
       <>
+        {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
+          <Link to="">
+            <button>Criar Prato</button>
+          </Link>
+        ) : null}
         {menu.map((currentMenu) => {
           return (
             <div>
@@ -39,14 +43,14 @@ export function ItensMenu() {
               <Link to={`/details/${currentMenu._id}`}>
                 <button>Details</button>
               </Link>
+              {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
+                <Link to={`/edit/${currentMenu._id}`}>
+                  <button>Gerenciar</button>
+                </Link>
+              ) : null}
             </div>
           );
         })}
-        {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
-          <Link to="/edit/:id">
-            <button>Gerenciar</button>
-          </Link>
-        ) : null}
       </>
     </>
   );
