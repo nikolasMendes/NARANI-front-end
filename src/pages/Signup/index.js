@@ -11,14 +11,10 @@ export function Signup() {
     confirmPassword: "",
   });
 
-  const [img, setImg] = useState("");
+  const [img] = useState("");
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  function handleImage(e) {
-    setImg(e.target.files[0]);
   }
 
   async function handleUpload() {
@@ -41,7 +37,7 @@ export function Signup() {
       const imgURL = await handleUpload();
       await api.post("/user/signup", { ...form, img: imgURL });
 
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
