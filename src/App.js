@@ -11,7 +11,12 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import { EditFood } from "./pages/EditFood";
 import { FoodDetails } from "./pages/FoodDetails";
 
+import { YourOrder } from "./pages/Order";
+import { FinishOrder } from "./pages/finishOrder";
+import { useState } from "react";
+
 function App() {
+  const [foodOrder, setFoodOrder] = useState([]);
   return (
     <>
       <AuthContextComponent>
@@ -25,7 +30,19 @@ function App() {
             element={<ProtectedRoute component={Profile} />}
           />
           <Route path="/edit/:id" element={<EditFood />} />
-          <Route path="/details/:id" element={<FoodDetails />} />
+          <Route
+            path="/details/:id"
+            element={
+              <FoodDetails foodOrder={foodOrder} setFoodOrder={setFoodOrder} />
+            }
+          />
+          <Route
+            path="/order"
+            element={
+              <YourOrder foodOrder={foodOrder} setFoodOrder={setFoodOrder} />
+            }
+          />
+          <Route path="/finishOrder" element={<FinishOrder />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>
