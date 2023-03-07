@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
 import { ItensMenu } from "./pages/ItensMenu";
+import { NavBar } from "./pages/NavBar";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { EditFood } from "./pages/EditFood";
@@ -21,6 +21,7 @@ function App() {
   return (
     <>
       <AuthContextComponent>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/itensmenu" element={<ItensMenu />} />
