@@ -7,7 +7,7 @@ function YourOrder(props) {
   const params = useParams();
 
   const [isLoading, setIsLoading] = useState(true);
-  const [order, setOrder] = useState({});
+  const [foodOrder, setFoodOrder] = useState({});
   const navigate = useNavigate();
 
   //adcionar mais itens
@@ -16,8 +16,10 @@ function YourOrder(props) {
   async function handleSubmit(e) {
     try {
       e.preventDefault();
-
-      const response = await api.post("/order", { ...props.foodOrder });
+      console.log(props.foodOrder);
+      const response = await api.post("/order", {
+        pedido: props.foodOrder,
+      });
       console.log(response);
       navigate("/finishOrder");
     } catch (err) {
@@ -28,15 +30,16 @@ function YourOrder(props) {
   //deletar pedido
 
   async function handleDelete() {
-    try {
-      const response = await api.delete(`/order/${params.orderId}`);
-      console.log(response);
-      navigate("/order");
-    } catch (err) {
-      console.log(err);
-    }
+    // try {
+    //   const response = await api.delete(`/order/${params.orderId}`);
+    //   console.log(response);
+    //   navigate("/order");
+    // } catch (err) {
+    //   console.log(err);
+    // }
+    props.setFoodOrder([]);
   }
-
+  console.log(foodOrder);
   return (
     <>
       <div>

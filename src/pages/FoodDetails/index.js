@@ -29,7 +29,6 @@ export function FoodDetails(props) {
 
     navigate("/order");
   }
-
   return (
     <div>
       {!isLoading && (
