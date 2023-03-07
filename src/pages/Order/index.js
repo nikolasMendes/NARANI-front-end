@@ -45,7 +45,7 @@ function YourOrder(props) {
         })}
       </div>
       <Link to={`/itensmenu`}>
-        <button>Adcionar</button>
+        <button>Adicionar</button>
       </Link>
 
       <button onClick={handleDelete}>Deletar</button>
