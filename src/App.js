@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
+
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
@@ -14,6 +14,7 @@ import { FoodDetails } from "./pages/FoodDetails";
 import { YourOrder } from "./pages/Order";
 import { FinishOrder } from "./pages/finishOrder";
 import { useState } from "react";
+import { CreateFood } from "./pages/CreateFood";
 
 function App() {
   const [foodOrder, setFoodOrder] = useState([]);
@@ -29,6 +30,7 @@ function App() {
             path="/profile"
             element={<ProtectedRoute component={Profile} />}
           />
+          <Route path="/createfood" element={<CreateFood />} />
           <Route path="/edit/:id" element={<EditFood />} />
           <Route
             path="/details/:id"
