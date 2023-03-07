@@ -11,12 +11,12 @@ export function Signup() {
     confirmPassword: "",
   });
 
-  const [img] = useState("");
+  // const [img] = useState("");
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-
+  /*
   async function handleUpload() {
     try {
       const uploadData = new FormData();
@@ -29,14 +29,14 @@ export function Signup() {
       console.log(error);
     }
   }
-
+*/
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      const imgURL = await handleUpload();
-      await api.post("/user/signup", { ...form, img: imgURL });
-
+      //const imgURL = await handleUpload();
+      await api.post("/user/signup", { ...form });
+      //await api.post("/user/signup", { ...form, img: imgURL });
       navigate("/");
     } catch (error) {
       console.log(error);
