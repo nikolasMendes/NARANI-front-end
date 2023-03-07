@@ -17,10 +17,10 @@ export function NavBar() {
     <>
       <Link to="/">Home</Link>
       <Link to="/ItensMenu">Menu</Link>
-      <Link to="/Order">Pedidos</Link>
 
       {loggedInUser && (
         <>
+          <Link to="/finishOrder">Acompanhe seus Pedidos</Link>
           <button onClick={handleLoggout}>Sair</button>
         </>
       )}
