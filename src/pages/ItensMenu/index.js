@@ -26,7 +26,7 @@ export function ItensMenu() {
       <h2>Culinária Japonesa</h2>
       <>
         {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
-          <Link to="">
+          <Link to={`/createfood`}>
             <button>Criar Prato</button>
           </Link>
         ) : null}
