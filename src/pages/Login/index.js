@@ -36,7 +36,7 @@ export function Login() {
 
   return (
     <>
-      <h1>Bem Vindos ao Narani</h1>
+      <h1 className="text-3xl font-bold underline">Bem Vindos ao Narani</h1>
 
       <form onSubmit={handleSumit}>
         <label>Email:</label>
