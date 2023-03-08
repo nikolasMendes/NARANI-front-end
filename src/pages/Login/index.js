@@ -3,7 +3,6 @@ import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import imageLogin from "../../images/image-login.jpg";
 import logo from "../../images/surshista.PNG";
 
 export function Login() {
