@@ -45,8 +45,7 @@ export function Login() {
           onSubmit={handleSumit}
           class="mt-8 space-y-6"
           action="#"
-          method="POST"
-        >
+          method="POST">
           <label for="email-address" class="sr-only">
             Email:
           </label>
