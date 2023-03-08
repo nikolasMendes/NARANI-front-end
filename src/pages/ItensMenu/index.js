@@ -37,7 +37,7 @@ export function ItensMenu() {
               <img alt="foto do prato" src={currentMenu.imagem} />
               <p> Descrição: {currentMenu.descrição}</p>
               <p>Porção: {currentMenu.quantidade}</p>
-              <p>Serve: {currentMenu.serve}</p>
+
               <p>Tempo de preparo: {currentMenu.preparo}</p>
               <p>Calorias: {currentMenu.calorias}</p>
               <Link to={`/details/${currentMenu._id}`}>
