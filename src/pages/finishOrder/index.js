@@ -32,7 +32,7 @@ function FinishOrder() {
               <div>
                 <img alt={currentElement.prato} src={currentElement.imagem} />
                 <h2>{currentElement.prato}</h2>
-                <h4>{currentElement.serve}</h4>
+                <h4>{currentElement.preparo}</h4>
               </div>
             </>
           );
