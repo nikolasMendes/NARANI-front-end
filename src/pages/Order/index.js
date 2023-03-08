@@ -41,8 +41,8 @@ function YourOrder(props) {
   }
   console.log(foodOrder);
   return (
-    <div className="flex">
-      <>
+    <div>
+      <div className="flex">
         <div className="mx-auto space-x-10 flex-3 items-stretch ">
           <Link to={`/itensmenu`}>
             <button className="mx-auto w-64 mb-8 bg-lime-600 text-white p-3 font-bold rounded-full hover:bg-lime-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-7  00  ">
@@ -64,18 +64,55 @@ function YourOrder(props) {
             Finalizar Pedido
           </button>
         </div>
-        <div>
-          {props.foodOrder.map((currentFood) => {
-            return (
-              <div className="mx-auto my-8 max-w-md border-4 border-slate-700 flex flex-col rounded-3xl">
-                <img src={currentFood.imagem} alt={currentFood.prato} />
-                <h1>{currentFood.prato}</h1>
-                <p>{currentFood.serve}</p>
+      </div>
+      <div className="flex justify-items-center items-center flex-col">
+        {props.foodOrder.map((food) => {
+          return (
+            // <div className="mx-auto my-8 max-w-md border-4 border-slate-700 flex flex-col rounded-3xl">
+            //   <img src={currentFood.imagem} alt={currentFood.prato} />
+            //   <h1>{currentFood.prato}</h1>
+            //   <p>{currentFood.serve}</p>
+            // </div>
+            <div className=" max-auto my-8 max-w-3xl border-4 border-slate-700 flex flex-col rounded-3xl">
+              <img
+                alt={food.prato}
+                src={food.imagem}
+                className="rounded-xl border-2 border-slate-700 "
+              />
+              <h1 className="pt-3 text-center text-3xl font-bold">
+                {food.prato}
+              </h1>
+              <div className="p-4">
+                <p className="pb-4">
+                  <span className="font-semibold"> Descrição:</span>{" "}
+                  {food.descrição}
+                </p>
+
+                <div className="flex justify-between">
+                  <p>
+                    <span className="font-semibold">Tempo de preparo: </span>
+                    {food.preparo}
+                  </p>
+                  <p className=" pr-80">
+                    <span className="font-semibold">Calorias:</span>{" "}
+                    {food.calorias}
+                  </p>
+                </div>
+                <div className="flex justify-between  pt-3">
+                  <p>
+                    <span className="font-semibold">Porção: </span>
+                    {food.quantidade}
+                  </p>
+                  <p className=" pr-96">
+                    <span className="font-semibold">Serve: </span>
+                    {food.serve}
+                  </p>
+                </div>
               </div>
-            );
-          })}
-        </div>
-      </>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
