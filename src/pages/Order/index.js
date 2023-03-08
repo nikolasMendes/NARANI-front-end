@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { api } from "../../api/api";
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import sushihero from "../../images/sushihero.png";
 
 function YourOrder(props) {
   const params = useParams();
@@ -41,7 +42,14 @@ function YourOrder(props) {
   }
   console.log(foodOrder);
   return (
-    <div>
+    <div class="bg-[#F9E4D4] w-screen h-screen-100">
+      <div className="flex justify-items-center items-center flex-col">
+        <img
+          alt="sushihero"
+          src={sushihero}
+          className="w-1/4 h-1/4 border-spacing-0 "
+        />
+      </div>
       <div className="flex">
         <div className="mx-auto space-x-10 flex-3 items-stretch ">
           <Link to={`/itensmenu`}>
@@ -71,7 +79,7 @@ function YourOrder(props) {
             //   <h1>{currentFood.prato}</h1>
             //   <p>{currentFood.preparo}</p>
             // </div>
-            <div className=" max-auto my-8 max-w-3xl border-4 border-slate-700 flex flex-col rounded-3xl">
+            <div className=" max-auto my-8 max-w-3xl bg-[#e09e6e] border-4 border-slate-700 flex flex-col rounded-3xl">
               <img
                 alt={food.prato}
                 src={food.imagem}
