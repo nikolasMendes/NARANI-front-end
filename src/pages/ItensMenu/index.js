@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { api } from "../../api/api";
 import { AuthContext } from "../../contexts/authContext";
+import sushi from "../../images/surshista-removebg-preview.png";
 
 import { Link } from "react-router-dom";
 export function ItensMenu() {
@@ -25,6 +26,10 @@ export function ItensMenu() {
     <div class=" bg-[#F9E4D4]">
       <div class="text-center py-3 text-7xl tracking-widest font-normal antialiased border-b border-orange-300 mx-20 py-10">
         <h1>Narani</h1>
+
+        <div class="w-20 inline-block">
+          <img alt="logo" src={sushi} />
+        </div>
 
         {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
           <Link to={`/createfood`}>
