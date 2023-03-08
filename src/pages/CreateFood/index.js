@@ -8,7 +8,7 @@ export function CreateFood() {
     imagem: "",
     descrição: "",
     quantidade: "",
-    serve: "",
+    preparo: "",
     calorias: "",
   });
 
@@ -61,7 +61,7 @@ export function CreateFood() {
               type="text"
               value={form.imagem}
               onChange={handleChange}
-              placeholder="Inserir URL"
+              placeholder="Inserir URL da imagem"
               className="w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-green-40 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
             />
           </div>
@@ -99,17 +99,17 @@ export function CreateFood() {
           </div>
           <div className="mt-6 text-left">
             <label
-              htmlFor="input-serve"
+              htmlFor="input-preparo"
               className="w-full text-lg font-medium text-gray-700">
               Tempo de preparo
             </label>
             <input
-              id="input-serve"
-              name="serve"
+              id="input-preparo"
+              name="preparo"
               type="text"
-              value={form.serve}
+              value={form.preparo}
               onChange={handleChange}
-              placeholder="Quantas pessoas são servidas por prato"
+              placeholder="Tempo de preparo do prato"
               className="w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-green-40 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
             />
           </div>

@@ -64,8 +64,8 @@ export function FoodDetails(props) {
                   {food.quantidade}
                 </p>
                 <p className=" pr-96">
-                  <span className="font-semibold">Serve: </span>
-                  {food.serve}
+                  <span className="font-semibold">Tempo de preparo: </span>
+                  {food.preparo}
                 </p>
               </div>
             </div>
