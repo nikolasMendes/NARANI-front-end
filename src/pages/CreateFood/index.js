@@ -90,7 +90,7 @@ export function CreateFood() {
             <input
               id="input-quantity"
               name="quantidade"
-              type="text"
+              type="number"
               value={form.quantidade}
               onChange={handleChange}
               placeholder="Quantidade de pratos a serem servidos"
@@ -101,7 +101,7 @@ export function CreateFood() {
             <label
               htmlFor="input-serve"
               className="w-full text-lg font-medium text-gray-700">
-              Serve
+              Tempo de preparo
             </label>
             <input
               id="input-serve"
