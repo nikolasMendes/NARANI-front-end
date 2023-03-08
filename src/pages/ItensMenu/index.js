@@ -22,36 +22,72 @@ export function ItensMenu() {
     fetchMenu();
   }, [setMenu]);
   return (
-    <>
-      <h2>Culinária Japonesa</h2>
-      <>
+    <div class=" bg-[#F9E4D4]">
+      <div class="text-center py-3 text-7xl tracking-widest font-normal antialiased border-b border-orange-300 mx-20 py-10">
+        <h1>Narani</h1>
+
         {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
           <Link to={`/createfood`}>
-            <button>Criar Prato</button>
+            <div class="text-center py-3 text-2xl tracking-widest font-normal antialiased  mx-20 py-10">
+              <button>Criar Prato</button>
+            </div>
           </Link>
         ) : null}
-        {menu.map((currentMenu) => {
-          return (
-            <div>
-              <h3>{currentMenu.prato}</h3>
-              <img alt="foto do prato" src={currentMenu.imagem} />
-              <p> Descrição: {currentMenu.descrição}</p>
-              <p>Porção: {currentMenu.quantidade}</p>
-              <p>Serve: {currentMenu.serve}</p>
-              <p>Tempo de preparo: {currentMenu.preparo}</p>
-              <p>Calorias: {currentMenu.calorias}</p>
-              <Link to={`/details/${currentMenu._id}`}>
-                <button>Details</button>
-              </Link>
-              {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
-                <Link to={`/edit/${currentMenu._id}`}>
-                  <button>Gerenciar</button>
-                </Link>
-              ) : null}
+      </div>
+      {menu.map((currentMenu) => {
+        return (
+          <div class=" px-4 border-b border-orange-300 mx-20  flex-col">
+            <div class="text-center py-8">
+              <h3 class="text-2xl font-bold tracking-wider">
+                {currentMenu.prato}
+              </h3>
             </div>
-          );
-        })}
-      </>
-    </>
+            <div class="flex flex-row w-full">
+              <div class="w-48 h-48 m-10 mt-0 ">
+                <img
+                  class="w-48 h-48 shadow-2xl shadow-gray-900"
+                  alt="foto do prato"
+                  src={currentMenu.imagem}
+                />
+              </div>
+              <div class="w-3/5 pl-10 mt-10 mb-10">
+                <p>
+                  <b class="tracking-widest">Descrição:</b>{" "}
+                  {currentMenu.descrição}
+                </p>
+                <p>
+                  <b>Porção:</b> {currentMenu.quantidade}
+                </p>
+                <p>
+                  <b>Serve:</b> {currentMenu.serve}
+                </p>
+                <p>
+                  <b>Tempo de preparo:</b> {currentMenu.preparo}
+                </p>
+                <p>
+                  <b>Calorias:</b> {currentMenu.calorias}
+                </p>
+              </div>
+              <div class=" w-1/12 flex items-center justify-end">
+                <Link to={`/details/${currentMenu._id}`}>
+                  <div class="hover:bg-[#e09e6e] place-self-center bg-[#db6916] text-center font-bold border-orange-100 = text-white shadow-2xl shadow-gray-900  py-0.5 border-solid border w-3/4 ml-24 rounded pointer-events-auto">
+                    <button class="tracking-wider">Detalhes</button>
+                  </div>
+                </Link>
+                {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
+                  <Link to={`/edit/${currentMenu._id}`}>
+                    <div>
+                      <div class="hover:bg-[#e09e6e] place-self-center bg-[#db6916] text-center font-bold border-orange-100 = text-white shadow-2xl shadow-gray-900  py-0.5 border-solid border w-3/4 ml-24 rounded pointer-events-auto">
+                        <button>Gerenciar</button>
+                      </div>
+                    </div>
+                  </Link>
+                ) : null}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 }

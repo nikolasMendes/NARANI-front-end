@@ -38,7 +38,7 @@ export function Login() {
 
   return (
     <div class="flex min-h-full items-center justify-center px-4 sm:px-6 bg-[#F9E4D4] h-screen flex-row space-x-10">
-      <div class="border-yellow-600 border-solid border p-16 mr-48  rounded-2xl bg-[#e09e6e] shadow-2xl shadow ">
+      <div class="border-orange-400 border-solid border p-16 mr-48  rounded-2xl bg-[#ffb592] shadow-2xl shadow ">
         <div class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 w-full max-w-md space-y-8">
           <h1>Bem Vindos ao Narani</h1>
         </div>
@@ -74,7 +74,7 @@ export function Login() {
             value={form.password}
             onChange={handleChange}
           />
-          <div class="place-self-center bg-[#d5cdca] text-center font-bold border-zinc-400 bg-zinc-200 py-0.5 border-solid border w-1/3 ml-24 rounded-2xl">
+          <div class="place-self-center bg-[#f9e4d4] text-center font-bold border-orange-400 py-0.5 border-solid border w-1/3 ml-24 rounded-2xl pointer-events-auto">
             <button type="submit">Entrar</button>
           </div>
           <div class="flex-row flex justify-between ">
