@@ -41,20 +41,42 @@ function YourOrder(props) {
   }
   console.log(foodOrder);
   return (
-    <>
-      <div>
-        {props.foodOrder.map((currentFood) => {
-          return <h1>{currentFood.prato}</h1>;
-        })}
-      </div>
-      <Link to={`/itensmenu`}>
-        <button>Adicionar</button>
-      </Link>
+    <div className="flex">
+      <>
+        <div className="mx-auto space-x-10 flex-3 items-stretch ">
+          <Link to={`/itensmenu`}>
+            <button className="mx-auto w-64 mb-8 bg-lime-600 text-white p-3 font-bold rounded-full hover:bg-lime-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-7  00  ">
+              Adicionar
+            </button>
+          </Link>
 
-      <button onClick={handleDelete}>Deletar</button>
+          <button
+            onClick={handleDelete}
+            className="mx-auto w-64 mb-8 bg-red-600 text-white p-3 font-bold rounded-full hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-7  00  "
+          >
+            Deletar
+          </button>
 
-      <button onClick={handleSubmit}>Finalizar Pedido</button>
-    </>
+          <button
+            onClick={handleSubmit}
+            className="mx-auto w-64 mb-8 bg-blue-600 text-white p-3 font-bold rounded-full hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-7  00  "
+          >
+            Finalizar Pedido
+          </button>
+        </div>
+        <div>
+          {props.foodOrder.map((currentFood) => {
+            return (
+              <div className="mx-auto my-8 max-w-md border-4 border-slate-700 flex flex-col rounded-3xl">
+                <img src={currentFood.imagem} alt={currentFood.prato} />
+                <h1>{currentFood.prato}</h1>
+                <p>{currentFood.serve}</p>
+              </div>
+            );
+          })}
+        </div>
+      </>
+    </div>
   );
 }
 

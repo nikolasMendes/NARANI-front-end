@@ -20,16 +20,20 @@ function FinishOrder() {
   console.log(orders);
   return (
     <>
-      <h1>MEUS PEDIDOS</h1>
+      <div>
+        <h1>MEUS PEDIDOS</h1>
+      </div>
 
       {orders.map((currentOrder) => {
         console.log(currentOrder);
         return currentOrder.pedido.map((currentElement) => {
           return (
             <>
-              <img alt={currentElement.prato} src={currentElement.imagem} />
-              <h2>{currentElement.prato}</h2>
-              <h4>{currentElement.serve}</h4>
+              <div>
+                <img alt={currentElement.prato} src={currentElement.imagem} />
+                <h2>{currentElement.prato}</h2>
+                <h4>{currentElement.serve}</h4>
+              </div>
             </>
           );
         });
