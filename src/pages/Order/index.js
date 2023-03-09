@@ -60,13 +60,15 @@ function YourOrder(props) {
 
           <button
             onClick={handleDelete}
-            className="mx-auto w-64 mb-8 bg-red-600 text-white p-3 font-bold rounded-full hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-7  00  ">
+            className="mx-auto w-64 mb-8 bg-red-600 text-white p-3 font-bold rounded-full hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-7  00  "
+          >
             Deletar
           </button>
 
           <button
             onClick={handleSubmit}
-            className="mx-auto w-64 mb-8 bg-blue-600 text-white p-3 font-bold rounded-full hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-7  00  ">
+            className="mx-auto w-64 mb-8 bg-blue-600 text-white p-3 font-bold rounded-full hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-7  00  "
+          >
             Finalizar Pedido
           </button>
         </div>
@@ -79,11 +81,11 @@ function YourOrder(props) {
             //   <h1>{currentFood.prato}</h1>
             //   <p>{currentFood.preparo}</p>
             // </div>
-            <div className=" max-auto my-8 max-w-3xl bg-[#e09e6e] border-4 border-slate-700 flex flex-col rounded-3xl">
+            <div className=" max-auto my-8 max-w-3xl bg-[#e09e6e] border-4  border-orange-500  flex flex-col rounded-3xl">
               <img
                 alt={food.prato}
                 src={food.imagem}
-                className="rounded-xl border-2 border-slate-700 "
+                className="rounded-xl border-2 border-orange-500  "
               />
               <h1 className="pt-3 text-center text-3xl font-bold">
                 {food.prato}
