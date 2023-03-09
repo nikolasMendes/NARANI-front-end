@@ -32,22 +32,20 @@ function FinishOrder() {
         MEUS PEDIDOS
       </div>
 
-
-      <div className=" flex justify-items-center items-center flex-col ">
+      <div className="flex justify-items-center items-center flex-col">
         {orders.map((currentOrder) => {
           return currentOrder.pedido.map((food) => {
             return (
-              <div className="flex flex-col max-auto my-8 max-w-4xl bg-[#e09e6e] border-4 border-slate-700  rounded-3xl">
+              <div className="flex flex-col max-auto my-8 bg-[#e09e6e] border-2 border-orange-500  rounded-3xl">
                 <img
                   alt={food.prato}
                   src={food.imagem}
-                  className="rounded-xl border-2 border-slate-700 "
+                  className="rounded-xl border-2 border-orange-500"
                 />
                 <h1 className="pt-3 text-center text-3xl font-bold">
                   {food.prato}
                 </h1>
                 <p className="pb-4">{food.serve}</p>
-
               </div>
             );
           });
