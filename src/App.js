@@ -6,7 +6,7 @@ import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
 import { ItensMenu } from "./pages/ItensMenu";
 import { NavBar } from "./pages/NavBar";
-
+import { ProtectedAdminRoute } from "./components/ProtectedAdminRoute";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { EditFood } from "./pages/EditFood";
 import { FoodDetails } from "./pages/FoodDetails";
@@ -31,8 +31,14 @@ function App() {
             path="/profile"
             element={<ProtectedRoute component={Profile} />}
           />
-          <Route path="/createfood" element={<CreateFood />} />
-          <Route path="/edit/:id" element={<EditFood />} />
+          <Route
+            path="/createfood"
+            element={<ProtectedAdminRoute component={CreateFood} />}
+          />
+          <Route
+            path="/edit/:id"
+            element={<ProtectedAdminRoute component={EditFood} />}
+          />
           <Route
             path="/details/:id"
             element={

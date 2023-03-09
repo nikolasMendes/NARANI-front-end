@@ -32,11 +32,11 @@ export function ItensMenu() {
         </div>
 
         {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
-          <Link to={`/createfood`}>
-            <div class="text-center py-3 text-2xl tracking-widest font-normal antialiased  mx-20 py-10">
+          <div class="text-center py-3 text-2xl tracking-widest font-normal antialiased  mx-20 py-10">
+            <Link to={`/createfood`}>
               <button>Criar Prato</button>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ) : null}
       </div>
       {menu.map((currentMenu) => {
@@ -63,9 +63,7 @@ export function ItensMenu() {
                 <p>
                   <b>Porção:</b> {currentMenu.quantidade}
                 </p>
-                <p>
-                  <b>Serve:</b> {currentMenu.serve}
-                </p>
+
                 <p>
                   <b>Tempo de preparo:</b> {currentMenu.preparo}
                 </p>
@@ -74,19 +72,19 @@ export function ItensMenu() {
                 </p>
               </div>
               <div class=" w-1/12 flex items-center justify-end">
-                <Link to={`/details/${currentMenu._id}`}>
-                  <div class="hover:bg-[#e09e6e] place-self-center bg-[#db6916] text-center font-bold border-orange-100 = text-white shadow-2xl shadow-gray-900  py-0.5 border-solid border w-3/4 ml-24 rounded pointer-events-auto">
+                <div class="hover:bg-[#e09e6e] place-self-center bg-[#db6916] text-center font-bold border-orange-100 = text-white shadow-2xl shadow-gray-900  py-0.5 border-solid border w-3/4 ml-24 rounded pointer-events-auto">
+                  <Link to={`/details/${currentMenu._id}`}>
                     <button class="tracking-wider">Detalhes</button>
-                  </div>
-                </Link>
-                {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
-                  <Link to={`/edit/${currentMenu._id}`}>
-                    <div>
-                      <div class="hover:bg-[#e09e6e] place-self-center bg-[#db6916] text-center font-bold border-orange-100 = text-white shadow-2xl shadow-gray-900  py-0.5 border-solid border w-3/4 ml-24 rounded pointer-events-auto">
-                        <button>Gerenciar</button>
-                      </div>
-                    </div>
                   </Link>
+                </div>
+                {loggedInUser && loggedInUser.user.role === "ADMIN" ? (
+                  <div>
+                    <div class="hover:bg-[#e09e6e] place-self-center bg-[#db6916] text-center font-bold border-orange-100 = text-white shadow-2xl shadow-gray-900  py-0.5 border-solid border w-3/4 ml-24 rounded pointer-events-auto">
+                      <Link to={`/edit/${currentMenu._id}`}>
+                        <button>Gerenciar</button>
+                      </Link>
+                    </div>
+                  </div>
                 ) : null}
               </div>
             </div>
