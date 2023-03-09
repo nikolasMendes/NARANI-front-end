@@ -63,9 +63,7 @@ export function ItensMenu() {
                 <p>
                   <b>Porção:</b> {currentMenu.quantidade}
                 </p>
-                <p>
-                  <b>Serve:</b> {currentMenu.serve}
-                </p>
+
                 <p>
                   <b>Tempo de preparo:</b> {currentMenu.preparo}
                 </p>
