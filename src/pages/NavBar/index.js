@@ -40,6 +40,14 @@ export function NavBar() {
             >
               Acompanhe seus Pedidos
             </Link>
+            <div>
+              <button
+                onClick={handleLoggout}
+                class="hover:bg-[#e09e6e]  block rounded-md px-3 py-2 text-base font-medium text-white"
+              >
+                Sair
+              </button>
+            </div>
           </>
         )}
 
@@ -53,14 +61,6 @@ export function NavBar() {
             </Link>
           </>
         )}
-      </div>
-      <div>
-        <button
-          onClick={handleLoggout}
-          class="hover:bg-[#e09e6e]  block rounded-md px-3 py-2 text-base font-medium text-white"
-        >
-          Sair
-        </button>
       </div>
     </div>
   );
