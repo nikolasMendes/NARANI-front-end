@@ -40,14 +40,14 @@ function FinishOrder() {
                 <img
                   alt={food.prato}
                   src={food.imagem}
-                  className="rounded-xl border-2 border-orange-500"
+                  className="rounded-xl border-2 border-orange-500 w-96"
                 />
                 <h1 className="pt-3 text-center text-3xl font-bold">
                   {food.prato}
                 </h1>
 
-                <p className="pb-4 text-center">
-                  <span>Quantidade:</span>
+                <p className="pb-4 text-center font-semibold">
+                  <span>Quantidade: </span>
                   {food.quantidade}
                 </p>
               </div>

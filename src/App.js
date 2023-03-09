@@ -39,6 +39,7 @@ function App() {
             path="/edit/:id"
             element={<ProtectedAdminRoute component={EditFood} />}
           />
+
           <Route
             path="/details/:id"
             element={
@@ -49,13 +50,21 @@ function App() {
               />
             }
           />
+
           <Route
             path="/order"
             element={
-              <YourOrder foodOrder={foodOrder} setFoodOrder={setFoodOrder} />
+              <ProtectedRoute
+                component={YourOrder}
+                foodOrder={foodOrder}
+                setFoodOrder={setFoodOrder}
+              />
             }
           />
-          <Route path="/finishOrder" element={<FinishOrder />} />
+          <Route
+            path="/finishOrder"
+            element={<ProtectedRoute component={FinishOrder} />}
+          />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>

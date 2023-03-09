@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../api/api";
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/authContext";
+
 export function FoodDetails(props) {
   const params = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [food, setFood] = useState({});
-  const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
+
   useEffect(() => {
     async function fetchFood() {
       try {
@@ -25,22 +24,23 @@ export function FoodDetails(props) {
   console.log(food);
   const navigate = useNavigate();
   function handleSubmit() {
-    const clone = [...props.foodOrder];
+    const clone = [...props.props.foodOrder];
     clone.push(food);
-    props.setFoodOrder(clone);
+    props.props.setFoodOrder(clone);
 
     navigate("/order");
   }
+  console.log(props);
   return (
     <div>
       {!isLoading && (
         <>
           <div class="flex min-h-full items-center  bg-[#F9E4D4] h-screen pb-36">
-            <div className="mx-auto max-w-3xl border-4 border-slate-700 flex flex-col rounded-3xl bg-[#e09e6e] shadow-2xl ">
+            <div className="mx-auto max-w-xl w-auto border-4 border-slate-700 flex flex-col rounded-3xl bg-[#e09e6e] shadow-2xl ">
               <img
                 alt={food.prato}
                 src={food.imagem}
-                className="rounded-xl border-2 border-slate-700 max-h-96 max-w-6xl"
+                className="rounded-xl border-2 border-slate-700 max-h-96 max-w-xl"
               />
               <h1 className="pt-3 text-center text-3xl font-bold">
                 {food.prato}
