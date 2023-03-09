@@ -42,7 +42,7 @@ function FinishOrder() {
                   src={food.imagem}
                   className="rounded-xl border-2 border-orange-500 w-96"
                 />
-                <h1 className="pt-3 text-center text-3xl font-bold">
+                <h1 className="pt-3 text-center text-3xl font-bold w-96">
                   {food.prato}
                 </h1>
 

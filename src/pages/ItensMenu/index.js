@@ -72,7 +72,7 @@ export function ItensMenu() {
                 </p>
               </div>
               <div class=" w-1/12 flex items-center justify-end">
-                <div class="hover:bg-[#e09e6e] place-self-center bg-[#db6916] text-center font-bold border-orange-100 = text-white shadow-2xl shadow-gray-900  py-0.5 border-solid border w-3/4 ml-24 rounded pointer-events-auto">
+                <div class="hover:bg-[#e09e6e] place-self-center bg-[#db6916] text-center font-bold border-orange-100 = text-white shadow-2xl shadow-gray-900  py-0.5 border-solid border w-full ml-24 rounded pointer-events-auto">
                   <Link to={`/details/${currentMenu._id}`}>
                     <button class="tracking-wider">Detalhes</button>
                   </Link>
