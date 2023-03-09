@@ -42,7 +42,11 @@ function App() {
           <Route
             path="/details/:id"
             element={
-              <FoodDetails foodOrder={foodOrder} setFoodOrder={setFoodOrder} />
+              <ProtectedRoute
+                component={FoodDetails}
+                foodOrder={foodOrder}
+                setFoodOrder={setFoodOrder}
+              />
             }
           />
           <Route
