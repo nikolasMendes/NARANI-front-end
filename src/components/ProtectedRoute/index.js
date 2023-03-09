@@ -16,5 +16,5 @@ export function ProtectedRoute(props) {
     }
   }, [navigate, parsedUser]);
 
-  return <Component />;
+  return <Component props={props} />;
 }

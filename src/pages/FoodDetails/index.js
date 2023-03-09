@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../api/api";
-
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/authContext";
 export function FoodDetails(props) {
   const params = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [food, setFood] = useState({});
+  const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
   useEffect(() => {
     async function fetchFood() {
       try {
@@ -38,7 +40,7 @@ export function FoodDetails(props) {
               <img
                 alt={food.prato}
                 src={food.imagem}
-                className="rounded-xl border-2 border-slate-700 max-h-96"
+                className="rounded-xl border-2 border-slate-700 max-h-96 max-w-6xl"
               />
               <h1 className="pt-3 text-center text-3xl font-bold">
                 {food.prato}
