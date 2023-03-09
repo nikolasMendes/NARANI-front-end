@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../api/api";
-
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/authContext";
 export function FoodDetails(props) {
   const params = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [food, setFood] = useState({});
+  const [loggedInUser, setLoggedInUser] = useContext(AuthContext);
   useEffect(() => {
     async function fetchFood() {
       try {
