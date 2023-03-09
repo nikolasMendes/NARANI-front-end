@@ -30,7 +30,7 @@ export function CreateFood() {
 
   return (
     <div class="flex min-h-full flex-wrap bg-[#F9E4D4] h-screen pb-24">
-      <div className="mx-auto mt-8 p-6 max-w-2xl  border-4 border-gray-800 border-double rounded-md bg-[#e09e6e] shadow-2xl ">
+      <div className="mx-auto mt-8 p-6 max-w-2xl my-80  border-4 border-gray-800 border-double rounded-md bg-[#e09e6e] shadow-2xl ">
         <h1 className="text-center font-bold text-3xl">Criar novo prato</h1>
         <form onSubmit={handleSubmit} className="space-y-2 border-black-500">
           <div className=" mt-2 text-left">
