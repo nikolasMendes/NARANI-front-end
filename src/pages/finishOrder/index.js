@@ -32,9 +32,7 @@ function FinishOrder() {
         MEUS PEDIDOS
       </div>
 
-
       <div className="flex justify-items-center items-center flex-col">
-
         {orders.map((currentOrder) => {
           return currentOrder.pedido.map((food) => {
             return (
@@ -48,8 +46,10 @@ function FinishOrder() {
                   {food.prato}
                 </h1>
 
-                <p className="pb-4">{food.quantidade}</p>
-
+                <p className="pb-4 text-center">
+                  <span>Quantidade:</span>
+                  {food.quantidade}
+                </p>
               </div>
             );
           });
